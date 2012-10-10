@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Changes in Koha's Bugzilla</title>
+</head>
+
+<body>
+
+<h1>Changes in Koha's Bugzilla</h1>
+
+[% MACRO datum BLOCK -%]
+   <td class="new">[% d.new %]</td> <td class="diff" style="background-color: [% IF d.diff > 0 %]green[% END %][% IF d.diff < 0 %]red[% END %]">[% IF d.diff > 0 %]+[% END %][% d.diff %]</td>
+[%- END %]
+
+<table border="1">
+
+  <tr>
+  <th> </th>
+  <th colspan="2">NEW</th>
+  <th colspan="2">REOPENED</th>
+  <th colspan="2">VERIFIED</th>
+  <th colspan="2">ASSIGNED</th>
+  <th colspan="2">In Discussion</th>
+  <th colspan="2">Patch doesn't apply</th>
+  <th colspan="2">Failed QA</th>
+  <th colspan="2">Needs Signoff</th>
+  <th colspan="2">Signed Off</th>
+  <th colspan="2">Passed QA</th>
+  <th colspan="2">Pushed to Master</th>
+  <th colspan="2">Pushed to Stable</th>
+  <th colspan="2">RESOLVED</th>
+  <th colspan="2">CLOSED</th>
+  </tr>
+
+  <tr>
+  <th>Blocker</th>
+  [% datum( d=blocker_new ) %]
+  [% datum( d=blocker_reopened ) %]
+  [% datum( d=blocker_verified ) %]
+  [% datum( d=blocker_assigned ) %]
+  [% datum( d=blocker_in_discussion ) %]
+  [% datum( d=blocker_patch_doesnt_apply ) %]
+  [% datum( d=blocker_failed_qa ) %]
+  [% datum( d=blocker_needs_signoff ) %]
+  [% datum( d=blocker_signed_off ) %]
+  [% datum( d=blocker_passed_qa ) %]
+  [% datum( d=blocker_pushed_to_master ) %]
+  [% datum( d=blocker_pushed_to_stable ) %]
+  [% datum( d=blocker_resolved ) %]
+  [% datum( d=blocker_closed ) %]
+  </tr>
+
+  <tr>
+  <th>Critical</th>
+  [% datum( d=critical_new ) %]
+  [% datum( d=critical_reopened ) %]
+  [% datum( d=critical_verified ) %]
+  [% datum( d=critical_assigned ) %]
+  [% datum( d=critical_in_discussion ) %]
+  [% datum( d=critical_patch_doesnt_apply ) %]
+  [% datum( d=critical_failed_qa ) %]
+  [% datum( d=critical_needs_signoff ) %]
+  [% datum( d=critical_signed_off ) %]
+  [% datum( d=critical_passed_qa ) %]
+  [% datum( d=critical_pushed_to_master ) %]
+  [% datum( d=critical_pushed_to_stable ) %]
+  [% datum( d=critical_resolved ) %]
+  [% datum( d=critical_closed ) %]
+  </tr>
+
+  <tr>
+  <th>Major</th>
+  [% datum( d=major_new ) %]
+  [% datum( d=major_reopened ) %]
+  [% datum( d=major_verified ) %]
+  [% datum( d=major_assigned ) %]
+  [% datum( d=major_in_discussion ) %]
+  [% datum( d=major_patch_doesnt_apply ) %]
+  [% datum( d=major_failed_qa ) %]
+  [% datum( d=major_needs_signoff ) %]
+  [% datum( d=major_signed_off ) %]
+  [% datum( d=major_passed_qa ) %]
+  [% datum( d=major_pushed_to_master ) %]
+  [% datum( d=major_pushed_to_stable ) %]
+  [% datum( d=major_resolved ) %]
+  [% datum( d=major_closed ) %]
+  </tr>
+  
+  <tr>
+  <th>Normal</th>
+  [% datum( d=normal_new ) %]
+  [% datum( d=normal_reopened ) %]
+  [% datum( d=normal_verified ) %]
+  [% datum( d=normal_assigned ) %]
+  [% datum( d=normal_in_discussion ) %]
+  [% datum( d=normal_patch_doesnt_apply ) %]
+  [% datum( d=normal_failed_qa ) %]
+  [% datum( d=normal_needs_signoff ) %]
+  [% datum( d=normal_signed_off ) %]
+  [% datum( d=normal_passed_qa ) %]
+  [% datum( d=normal_pushed_to_master ) %]
+  [% datum( d=normal_pushed_to_stable ) %]
+  [% datum( d=normal_resolved ) %]
+  [% datum( d=normal_closed ) %]
+  </tr>
+
+  <tr>
+  <th>Minor</th>
+  [% datum( d=minor_new ) %]
+  [% datum( d=minor_reopened ) %]
+  [% datum( d=minor_verified ) %]
+  [% datum( d=minor_assigned ) %]
+  [% datum( d=minor_in_discussion ) %]
+  [% datum( d=minor_patch_doesnt_apply ) %]
+  [% datum( d=minor_failed_qa ) %]
+  [% datum( d=minor_needs_signoff ) %]
+  [% datum( d=minor_signed_off ) %]
+  [% datum( d=minor_passed_qa ) %]
+  [% datum( d=minor_pushed_to_master ) %]
+  [% datum( d=minor_pushed_to_stable ) %]
+  [% datum( d=minor_resolved ) %]
+  [% datum( d=minor_closed ) %]
+  </tr>
+
+  <tr>
+  <th>Trivial</th>
+  [% datum( d=trivial_new ) %]
+  [% datum( d=trivial_reopened ) %]
+  [% datum( d=trivial_verified ) %]
+  [% datum( d=trivial_assigned ) %]
+  [% datum( d=trivial_in_discussion ) %]
+  [% datum( d=trivial_patch_doesnt_apply ) %]
+  [% datum( d=trivial_failed_qa ) %]
+  [% datum( d=trivial_needs_signoff ) %]
+  [% datum( d=trivial_signed_off ) %]
+  [% datum( d=trivial_passed_qa ) %]
+  [% datum( d=trivial_pushed_to_master ) %]
+  [% datum( d=trivial_pushed_to_stable ) %]
+  [% datum( d=trivial_resolved ) %]
+  [% datum( d=trivial_closed ) %]
+  </tr>
+
+  <tr>
+  <th>Enhancement</th>
+  [% datum( d=enhancement_new ) %]
+  [% datum( d=enhancement_reopened ) %]
+  [% datum( d=enhancement_verified ) %]
+  [% datum( d=enhancement_assigned ) %]
+  [% datum( d=enhancement_in_discussion ) %]
+  [% datum( d=enhancement_patch_doesnt_apply ) %]
+  [% datum( d=enhancement_failed_qa ) %]
+  [% datum( d=enhancement_needs_signoff ) %]
+  [% datum( d=enhancement_signed_off ) %]
+  [% datum( d=enhancement_passed_qa ) %]
+  [% datum( d=enhancement_pushed_to_master ) %]
+  [% datum( d=enhancement_pushed_to_stable ) %]
+  [% datum( d=enhancement_resolved ) %]
+  [% datum( d=enhancement_closed ) %]
+  </tr>
+
+</table>
+
+[% USE date( format = '%Y-%m-%d %H:%M:%S' ) %]
+<p>Generated: [% date.format %] by </p>
+
+</body>
+</html>
